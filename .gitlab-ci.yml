@@ -27,3 +27,33 @@ deploy:
     - mvn $MAVEN_CLI_OPTS deploy
   only:
     - main
+    - develop
+
+pages:
+  stage: deploy
+  script:
+    - mvn $MAVEN_CLI_OPTS clean site:site site:stage-deploy -DstagingSiteURL=file://$(pwd)/public -DtopSiteURL=https://www.ds-2.de/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+    - develop
+
+# release:
+#   stage: release
+#   when:
+#     - manual
+#   rules:
+#     - if: $CI_DEPLOY_FREEZE == null
+#   needs:
+#     - test
+#   except:
+#     - tags
+#   script:
+#     - mvn $MAVEN_CLI_OPTS release:clean release:prepare release:perform
+#   only:
+#     - releases/1.0
+#   release:
+#     name: "My awesome release"
+#     tag_name: "v-$CI_COMMIT_TAG"
