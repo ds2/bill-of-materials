@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>.m2/repository</localRepository>
+    <servers>
+        <server>
+            <id>ds2.jfrog</id>
+            <username>ci</username>
+        </server>
+    </servers>
+    <mirrors>
+        <!--<mirror><id>central-mirror</id><mirrorOf>central</mirrorOf><url>http://ec2-35-157-174-18.eu-central-1.compute.amazonaws.com/repository/tignum</url></mirror>-->
+    </mirrors>
+    <profiles>
+        <profile>
+            <id>bintray</id>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>JCenter Repo</name>
+                    <url>https://jcenter.bintray.com/</url>
+                    <releases>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                </repository>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central-m2</id>
+                    <name>Maven Official Repo</name>
+                    <url>https://repo1.maven.org/maven2/</url>
+                    <releases>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>JCenter Repo</name>
+                    <url>https://jcenter.bintray.com/</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central-m2</id>
+                    <name>Maven Official Repo</name>
+                    <url>https://repo1.maven.org/maven2/</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+        <profile>
+            <id>ds2</id>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>ds2af</id>
+                    <name>DS2 Artifactory Plugin Repo</name>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://ds2.jfrog.io/artifactory/ds2/</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <repositories>
+                <repository>
+                    <id>ds2af</id>
+                    <name>DS2 Artifactory Plugin Repo</name>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <url>https://ds2.jfrog.io/artifactory/ds2/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <!-- <activeProfile>hetzner</activeProfile> -->
+        <activeProfile>ds2</activeProfile>
+    </activeProfiles>
+</settings>
