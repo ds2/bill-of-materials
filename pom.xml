@@ -10,6 +10,7 @@
     <ds2.deploy.rel>https://ds2.jfrog.io/artifactory/oss-releases/</ds2.deploy.rel>
     <ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
     <ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <organization>
     <name>DS/2</name>
@@ -50,8 +51,47 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>2.9</version>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.9.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5.3</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.2.0</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

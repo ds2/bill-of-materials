@@ -14,4 +14,20 @@
     <module>jee9</module>
     <module>jee9-web</module>
   </modules>
+  <dependencyManagement>
+      <dependencies>
+          <dependency>
+              <groupId>org.slf4j</groupId>
+              <artifactId>slf4j-api</artifactId>
+              <version>1.7.30</version>
+              <scope>compile</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+              <scope>provided</scope>
+          </dependency>
+      </dependencies>
+  </dependencyManagement>
 </project>

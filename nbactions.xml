@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Site StageDeploy</actionName>
+            <displayName>Site StageDeploy</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>site:site</goal>
+                <goal>site:stage-deploy</goal>
+            </goals>
+        </action>
+    </actions>
