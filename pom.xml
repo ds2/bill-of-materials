@@ -1,42 +1,77 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>ds2.bom</groupId>
-    <artifactId>jee8-bom</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>DS/2 JEE8 Bill of Materials</name>
-    <description>A BOM for building JEE8 projects with JakartaEE.</description>
-    <inceptionYear>2006</inceptionYear>
-    <properties>
-    	<ds2.deploy.rel>https://ds2.jfrog.io/artifactory/oss-releases/</ds2.deploy.rel>
-    	<ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
-    	<ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
-    </properties>
-    <organization>
-    	<name>DS/2</name>
-    	<url>https://www.ds-2.de/</url>
-    </organization>
-    <packaging>pom</packaging>
-    <scm>
-    	<url>https://gitlab.com/ds2-internal/jee8-bom/</url>
-    	<connection>https://gitlab.com/ds2-internal/jee8-bom.git</connection>
-    	<developerConnection>git@gitlab.com:ds2-internal/jee8-bom.git</developerConnection>
-    	<tag>HEAD</tag>
-    </scm>
-    <issueManagement>
-    	<system>Jira</system>
-    	<url>https://ds2dev.atlassian.net/</url>
-    </issueManagement>
-    <distributionManagement>
-    	<repository>
-    		<id>${ds2.deploy.repoId}</id>
-    		<name>DS/2 Releases Repository</name>
-    		<url>${ds2.deploy.rel}</url>
-    	</repository>
-    	<snapshotRepository>
-    		<id>${ds2.deploy.repoId}</id>
-    		<name>DS/2 Snapshots Repository</name>
-    		<url>${ds2.deploy.sn}</url>
-    	</snapshotRepository>
-    </distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ds2.bom</groupId>
+  <artifactId>jee-boms</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>DS/2 JEE BOM Project</name>
+  <description>A BOM for building JEE8 projects with JakartaEE.</description>
+  <inceptionYear>2006</inceptionYear>
+  <properties>
+    <ds2.deploy.rel>https://ds2.jfrog.io/artifactory/oss-releases/</ds2.deploy.rel>
+    <ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
+    <ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
+  </properties>
+  <organization>
+    <name>DS/2</name>
+    <url>https://www.ds-2.de/</url>
+  </organization>
+  <packaging>pom</packaging>
+  <scm>
+    <url>https://gitlab.com/ds2-internal/jee8-bom/</url>
+    <connection>scm:git:https://gitlab.com/ds2-internal/jee8-bom.git</connection>
+    <developerConnection>scm:git:git@gitlab.com:ds2-internal/jee8-bom.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <system>Jira</system>
+    <url>https://ds2dev.atlassian.net/</url>
+  </issueManagement>
+  <distributionManagement>
+    <repository>
+      <id>${ds2.deploy.repoId}</id>
+      <name>DS/2 Releases Repository</name>
+      <url>${ds2.deploy.rel}</url>
+    </repository>
+    <snapshotRepository>
+      <id>${ds2.deploy.repoId}</id>
+      <name>DS/2 Snapshots Repository</name>
+      <url>${ds2.deploy.sn}</url>
+    </snapshotRepository>
+    <site>
+      <id>ds2.site</id>
+      <name>DS2 Docs Site</name>
+      <url>file:///tmp/ds2-jee-bom-${project.version}</url>
+    </site>
+  </distributionManagement>
+  <modules>
+    <module>jee</module>
+  </modules>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.9</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.5</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>dependency-updates-report</report>
+              <report>plugin-updates-report</report>
+              <report>property-updates-report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
