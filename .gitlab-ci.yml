@@ -73,7 +73,7 @@ release:
   before_script:
     - mkdir -p ~/.ssh/
 #    - cp $DEPLOY_PRIVATE_KEY ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
-#    - cp $KNOWN_HOSTS ~/.ssh/known_hosts
+    - cp .ssh-known-hosts ~/.ssh/known_hosts
 #    - apt-get update && apt-get install -y git
     - git config --global user.email "noreply@gitlab.com"
     - git config --global user.name "GitLab CI"
