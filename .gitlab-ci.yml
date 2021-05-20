@@ -52,6 +52,6 @@ pages:
 release:
   stage: release
   script:
-    - mvn $MAVEN_CLI_OPTS release:perform -DreleaseVersion=$CI_COMMIT_TAG
+    - mvn $MAVEN_CLI_OPTS release:clean release:perform -DreleaseVersion=$CI_COMMIT_TAG
   only:
     - tags
