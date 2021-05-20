@@ -47,60 +47,13 @@ pages:
       - public
   only:
     - main
+    - develop
 
-# release:
-#   stage: release
-#   when:
-#     - manual
-#   rules:
-#     - if: $CI_DEPLOY_FREEZE == null
-#   needs:
-#     - test
-#   except:
-#     - tags
-#   script:
-#     - mvn $MAVEN_CLI_OPTS release:clean release:prepare release:perform
-#   only:
-#     - releases/1.0
-#   release:
-#     name: "My awesome release"
-#     tag_name: "v-$CI_COMMIT_TAG"
-# Credit: https://gitlab.com/DiAngelo/release-example/-/tree/master
-# Also see:
-# * https://forum.gitlab.com/t/getting-mvn-release-to-work-with-gitlab-ci/4904/6
 release:
   stage: release
-  only:
-    - release/v0.1
-  when: manual
-  before_script:
-    - mkdir -p ~/.ssh/
-    - chown 7000 ~/.ssh
-    - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
-    - eval $(ssh-agent -s)
-    - ssh-add <(echo "$SSH_DEPLOY_KEY")
-    - ssh-keyscan gitlab.com > ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - git config --global user.email "noreply@gitlab.com"
-    - git config --global user.name "GitLab CI"
-  script:
-    - 'bash -e'
-    - patch=$(echo -e $CI_COMMIT_TAG  | sed -r 's/.+\.(\d+)\.(RELEASE|M\d+|RC\d+)$/\1/'); echo patch=${patch}
-    - echo $CI_COMMIT_TAG | grep -q '\.RELEASE$' && patch=$((patch +1)); echo new path=${patch}
-    - |
-      nextVersion=$(echo $CI_COMMIT_TAG | sed -r "s/v(\d+)\.(\d+)\.(\d+)\..+/\1.\2\.${patch}-SNAPSHOT/")
-      echo nextVersion: $nextVersion
-    - |
-      releaseVersion=${CI_COMMIT_TAG:1};
-      echo releaseVersion: ${releaseVersion}
-    - |
-      tagByMvn=${CI_COMMIT_TAG}-tbm;
-      echo tagByMvn: ${tagByMvn}
-    - git fetch --all
-    - git checkout -B "$CI_COMMIT_REF_NAME"
-    - mvn $MAVEN_CLI_OPTS -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${nextVersion} release:clean release:prepare
-    - mvn $MAVEN_CLI_OPTS -DreleaseVersion=${releaseVersion} -DdevelopmentVersion=${nextVersion} release:perform
   rules:
-    - if: '$CI_COMMIT_TAG =~ /^v(\d+\.){3}(RELEASE|M[1-9]+|RC[1-9]+)$/'
-      when: always
-    - when: never
+    - if: $CI_DEPLOY_FREEZE == null
+  script:
+    - mvn $MAVEN_CLI_OPTS release:perform -DreleaseVersion=$CI_COMMIT_TAG
+  only:
+    - tags
