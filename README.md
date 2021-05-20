@@ -40,3 +40,9 @@ Now you can add your dependency via:
 Check via
 
     ./gradlew -q dependencies --configuration compileClasspath
+
+## Perform a release
+
+You must be on the releases branch. Then run:
+
+    mvn -B release:clean release:prepare -DdevelopmentVersion=1.0.0-SNAPSHOT -DreleaseVersion=1.0.1 -DdryRun=true

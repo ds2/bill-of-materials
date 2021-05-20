@@ -40,20 +40,11 @@ pages:
     - main
     - develop
 
-# release:
-#   stage: release
-#   when:
-#     - manual
-#   rules:
-#     - if: $CI_DEPLOY_FREEZE == null
-#   needs:
-#     - test
-#   except:
-#     - tags
-#   script:
-#     - mvn $MAVEN_CLI_OPTS release:clean release:prepare release:perform
-#   only:
-#     - releases/1.0
-#   release:
-#     name: "My awesome release"
-#     tag_name: "v-$CI_COMMIT_TAG"
+release:
+  stage: release
+  rules:
+    - if: $CI_DEPLOY_FREEZE == null
+  script:
+    - mvn $MAVEN_CLI_OPTS release:perform -DreleaseVersion=$CI_COMMIT_TAG
+  only:
+    - tags
