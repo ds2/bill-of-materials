@@ -52,6 +52,7 @@ pages:
 release:
   stage: release
   script:
-    - mvn $MAVEN_CLI_OPTS release:clean release:perform -DreleaseVersion=$CI_COMMIT_TAG
+    - echo "Deploying tag $CI_COMMIT_TAG hopefully ;)"
+    - mvn $MAVEN_CLI_OPTS clean deploy
   only:
     - tags
