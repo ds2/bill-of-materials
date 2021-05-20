@@ -61,7 +61,7 @@
             <id>ds2</id>
             <pluginRepositories>
                 <pluginRepository>
-                    <id>ds2af</id>
+                    <id>ds2.jfrog</id>
                     <name>DS2 Artifactory Plugin Repo</name>
                     <releases>
                         <enabled>true</enabled>
@@ -74,7 +74,7 @@
             </pluginRepositories>
             <repositories>
                 <repository>
-                    <id>ds2af</id>
+                    <id>ds2.jfrog</id>
                     <name>DS2 Artifactory Plugin Repo</name>
                     <releases>
                         <enabled>true</enabled>

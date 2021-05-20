@@ -6,3 +6,7 @@ target
 public
 .idea
 *.iml
+*.next
+*.releaseBackup
+*.tag
+release.properties
