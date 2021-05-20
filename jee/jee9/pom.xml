@@ -3,7 +3,7 @@
   <parent>
     <groupId>ds2.bom</groupId>
     <artifactId>jee-common</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.1-test</version>
   </parent>
   <artifactId>jee9</artifactId>
   <name>DS/2 JEE9 BOM</name>
