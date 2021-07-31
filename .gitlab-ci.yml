@@ -1,32 +1,12 @@
 image: maven:latest
 
-stages:
-  - build
-  - test
-  - release
-  - deploy
+include:
+  - project: 'ds_2/ci-templates'
+    file: # you can add multiple files you need for your project
+      - '/templates/build-maven.yaml'
 
 variables:
   MAVEN_CLI_OPTS: "-s ci-settings.xml --batch-mode --errors --fail-at-end --show-version"
-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Dhttps.protocols=TLSv1.2 -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
-
-cache:
-  key: "${CI_COMMIT_REF_SLUG}" # the branch name
-  paths:
-    - .m2/repository
-    - target
-
-build:
-  stage: build
-  script:
-    - mvn $MAVEN_CLI_OPTS compile
-
-test:
-  stage: test
-  needs:
-    - build
-  script:
-    - mvn $MAVEN_CLI_OPTS test
 
 deploy:
   stage: deploy
@@ -39,7 +19,7 @@ deploy:
     - develop
 
 pages:
-  stage: deploy
+  stage: production
   script:
     - mvn $MAVEN_CLI_OPTS clean site:site site:stage-deploy -DstagingSiteURL=file://$(pwd)/public -DtopSiteURL=https://www.ds-2.de/
   artifacts:
