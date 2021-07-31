@@ -10,7 +10,7 @@ variables:
   MAVEN_CLI_OPTS: "-s ci-settings.xml --batch-mode --errors --fail-at-end --show-version"
 
 deploy:
-  stage: deploy
+  stage: release
   needs:
     - test
   script:
