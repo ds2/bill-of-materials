@@ -12,7 +12,7 @@ variables:
 deploy:
   stage: release
   needs:
-    - test
+    - build-maven
   script:
     - mvn $MAVEN_CLI_OPTS deploy
   only:
