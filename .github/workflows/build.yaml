@@ -42,3 +42,8 @@ jobs:
           build_dir: docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: deploy to Artifactory
+        run: mvn -s ci-settings.xml --batch-mode deploy
+        env:
+          CI_USERNAME: ${{secrets.CI_USERNAME}}
+          CI_PASSWORD: ${{secrets.CI_PASSWORD}}
