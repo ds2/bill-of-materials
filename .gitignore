@@ -10,3 +10,5 @@ public
 *.releaseBackup
 *.tag
 release.properties
+docs
+public
