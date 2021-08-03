@@ -28,8 +28,7 @@ jobs:
           CI_USERNAME: ${{secrets.CI_USERNAME}}
           CI_PASSWORD: ${{secrets.CI_PASSWORD}}
       - run: |
-          mkdir public 2>>/dev/null
-          mkdir docs 2>>/dev/null
+          mkdir public docs 2>>/dev/null || true
           cp -r target/site/* public/
           cp -r target/site/* docs/
       - name: Deploy to GitHub Pages
