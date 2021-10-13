@@ -9,10 +9,7 @@
   <name>DS/2 JEE Commons</name>
   <packaging>pom</packaging>
   <modules>
-    <module>jee8</module>
-    <module>jee8-web</module>
-    <module>jee9</module>
-    <module>jee9-web</module>
+    <module>jee</module>
   </modules>
   <dependencyManagement>
       <dependencies>
