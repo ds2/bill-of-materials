@@ -1,0 +1,30 @@
+name: Check Pullrequests
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  checkPr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking out current branch for this build
+        uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: "11"
+          distribution: "adopt"
+      - name: setup maven repo
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Build with Maven
+        run: mvn -s ci-settings.xml --batch-mode --update-snapshots clean site:site -DtopSiteURL=https://www.ds-2.de/
+        env:
+          CI_USERNAME: ${{secrets.CI_USERNAME}}
+          CI_PASSWORD: ${{secrets.CI_PASSWORD}}
