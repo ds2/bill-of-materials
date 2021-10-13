@@ -7,9 +7,11 @@
   </parent>
   <artifactId>jee-common</artifactId>
   <name>DS/2 JEE Commons</name>
+  <description>This module contains some basic dependencies for JEE.</description>
   <packaging>pom</packaging>
   <modules>
     <module>jee</module>
+    <module>jee-web</module>
   </modules>
   <dependencyManagement>
       <dependencies>
