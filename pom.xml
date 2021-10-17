@@ -11,6 +11,8 @@
         <ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
         <ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -96,6 +98,16 @@
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
+                    <configuration>
+                        <source>${java.source.version}</source>
+                        <target>${java.target.version}</target>
+                        <meminitial>128m</meminitial>
+                        <maxmem>512m</maxmem>
+                        <verbose>true</verbose>
+                        <compilerArgs>
+                            <arg>-Xlint:all,-options,-path</arg>
+                        </compilerArgs>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-ear-plugin</artifactId>
