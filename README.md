@@ -1,8 +1,8 @@
-# jee8-bom
+# DS/2 JEE Bill of Materials
 
 A BOM to chain JEE projects.
 
-Website should be here: <https://ds2-internal.gitlab.io/jee8-bom/>
+Website should be here: <https://ds2-internal.gitlab.io/jee8-bom/> or here: <https://ds2.github.io/bill-of-materials/>
 
 ## Searching for updates
 
