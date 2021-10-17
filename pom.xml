@@ -13,7 +13,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
-        <compiler.plugin.fork>true</compiler.plugin.fork>
+        <compiler.plugin.fork>false</compiler.plugin.fork>
+        <maven.compiler.target>${java.target.version}</maven.compiler.target>
+        <maven.compiler.source>${java.source.version}</maven.compiler.source>
+        <maven.compiler.verbose>false</maven.compiler.verbose>
+        <maven.compiler.debug>true</maven.compiler.debug>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -105,10 +109,14 @@
                         <target>${java.target.version}</target>
                         <meminitial>128m</meminitial>
                         <maxmem>512m</maxmem>
-                        <verbose>true</verbose>
-                        <compilerArgs>
+                        <verbose>${maven.compiler.verbose}</verbose>
+                        <!--<compilerArgs>
                             <arg>-Xlint:all,-options,-path</arg>
-                        </compilerArgs>
+                        </compilerArgs>-->
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                        <debug>${maven.compiler.debug}</debug>
                     </configuration>
                 </plugin>
                 <plugin>
