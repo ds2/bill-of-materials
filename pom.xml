@@ -13,6 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
+        <compiler.plugin.fork>true</compiler.plugin.fork>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -99,6 +100,7 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
+                        <fork>${compiler.plugin.fork}</fork>
                         <source>${java.source.version}</source>
                         <target>${java.target.version}</target>
                         <meminitial>128m</meminitial>
