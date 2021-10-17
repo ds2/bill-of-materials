@@ -11,6 +11,13 @@
         <ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
         <ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <compiler.plugin.fork>false</compiler.plugin.fork>
+        <maven.compiler.target>${java.target.version}</maven.compiler.target>
+        <maven.compiler.source>${java.source.version}</maven.compiler.source>
+        <maven.compiler.verbose>false</maven.compiler.verbose>
+        <maven.compiler.debug>true</maven.compiler.debug>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -88,6 +95,33 @@
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.2.4</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <fork>${compiler.plugin.fork}</fork>
+                        <source>${java.source.version}</source>
+                        <target>${java.target.version}</target>
+                        <meminitial>128m</meminitial>
+                        <maxmem>512m</maxmem>
+                        <verbose>${maven.compiler.verbose}</verbose>
+                        <!--<compilerArgs>
+                            <arg>-Xlint:all,-options,-path</arg>
+                        </compilerArgs>-->
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                        <debug>${maven.compiler.debug}</debug>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>

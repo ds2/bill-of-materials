@@ -1,36 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>ds2.bom</groupId>
-    <artifactId>jee-boms</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>jee-common</artifactId>
-  <name>DS/2 JEE Commons</name>
-  <description>This module contains some basic dependencies for JEE.</description>
-  <packaging>pom</packaging>
-  <modules>
-    <module>jee</module>
-    <module>jee-web</module>
-  </modules>
-  <dependencyManagement>
-      <dependencies>
-          <dependency>
-              <groupId>org.slf4j</groupId>
-              <artifactId>slf4j-api</artifactId>
-              <version>1.7.32</version>
-              <scope>compile</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.projectlombok</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ds2.bom</groupId>
+        <artifactId>jee-boms</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>jee-common</artifactId>
+    <name>DS/2 JEE BOM Commons</name>
+    <description>This module contains some basic dependencies for JEE.</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>jee</module>
+        <module>jee-web</module>
+    </modules>
+    <properties>
+        <apache.logging.version>2.14.1</apache.logging.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.32</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.22</version>
-              <scope>provided</scope>
-          </dependency>
-          <dependency>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
                 <groupId>jakarta.persistence</groupId>
                 <artifactId>jakarta.persistence-api</artifactId>
-                <version>2.2.3</version>
+                <version>3.0.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -51,6 +54,112 @@
                 <version>2.0.0</version>
                 <scope>provided</scope>
             </dependency>
-      </dependencies>
-  </dependencyManagement>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.6</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>1.2.6</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>7.4.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>1.4.200</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${apache.logging.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${apache.logging.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-web</artifactId>
+                <version>${apache.logging.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>3.4.4</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>31.0.1-jre</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>3.1.0-M1</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.26</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>2.0.SP1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.weld.se</groupId>
+                <artifactId>weld-se-core</artifactId>
+                <version>4.0.2.Final</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss</groupId>
+                <artifactId>jandex</artifactId>
+                <version>2.4.1.Final</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>7.15.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-web-api</artifactId>
+                <version>8.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+                <version>3.1.0-M1</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+                <version>1.0.2</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
