@@ -6,7 +6,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>jee-web</artifactId>
-    <name>DS/2 JEE Web BOM</name>
+    <name>DS/2 JEE BOM Web</name>
     <description>A BOM for building JEE Web projects with JakartaEE.</description>
     <packaging>pom</packaging>
     <dependencyManagement>
