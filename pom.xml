@@ -19,6 +19,7 @@
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
         <maven.compiler.verbose>false</maven.compiler.verbose>
         <maven.compiler.debug>true</maven.compiler.debug>
+        <spotbugs.version>4.5.0</spotbugs.version>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -58,6 +59,19 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>4.5.0.0</version>
+                    <dependencies>
+                        <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
+                        <dependency>
+                            <groupId>com.github.spotbugs</groupId>
+                            <artifactId>spotbugs</artifactId>
+                            <version>${spotbugs.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>3.0.0</version>
