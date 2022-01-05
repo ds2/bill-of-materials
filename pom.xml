@@ -19,7 +19,7 @@
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
         <maven.compiler.verbose>false</maven.compiler.verbose>
         <maven.compiler.debug>true</maven.compiler.debug>
-        <spotbugs.version>4.5.2</spotbugs.version>
+        <spotbugs.version>4.5.3</spotbugs.version>
     </properties>
     <organization>
         <name>DS/2</name>
