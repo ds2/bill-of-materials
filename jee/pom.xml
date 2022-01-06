@@ -15,7 +15,7 @@
         <module>jee-web</module>
     </modules>
     <properties>
-        <apache.logging.version>2.17.0</apache.logging.version>
+        <apache.logging.version>2.17.1</apache.logging.version>
         <junit5.version>5.8.2</junit5.version>
         <slf4j.version>1.7.32</slf4j.version>
     </properties>
