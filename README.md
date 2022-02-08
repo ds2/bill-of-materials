@@ -45,4 +45,4 @@ Check via
 
 You must be on the releases branch. Then run:
 
-    mvn -B release:clean release:prepare -DdevelopmentVersion=1.0.0-SNAPSHOT -DreleaseVersion=1.0.1 -DdryRun=true
+    mvn -B release:clean release:prepare release:perform -DdevelopmentVersion=1.0.0-SNAPSHOT -DreleaseVersion=1.0.1 -DdryRun=true
