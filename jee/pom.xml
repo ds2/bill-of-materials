@@ -217,6 +217,16 @@
                 <version>5.2021.10</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.faces</groupId>
+                <artifactId>jakarta.faces-api</artifactId>
+                <version>3.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
