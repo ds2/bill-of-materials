@@ -14,16 +14,23 @@
         <module>jee-web</module>
     </modules>
     <properties>
-        <apache.logging.version>2.14.1</apache.logging.version>
+        <apache.logging.version>2.17.1</apache.logging.version>
         <junit5.version>5.8.2</junit5.version>
+        <slf4j.version>1.7.35</slf4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.32</version>
+                <version>${slf4j.version}</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -46,7 +53,7 @@
             <dependency>
                 <groupId>jakarta.enterprise</groupId>
                 <artifactId>jakarta.enterprise.cdi-api</artifactId>
-                <version>2.0.2</version>
+                <version>3.0.1</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -70,13 +77,13 @@
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
-                <version>7.4.0</version>
+                <version>7.5</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
-                <version>1.4.200</version>
+                <version>2.1.210</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -115,9 +122,21 @@
                 <scope>runtime</scope>
             </dependency>
             <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.6.5.Final</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.27</version>
+                <version>8.0.28</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.3.2</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>
@@ -135,13 +154,13 @@
             <dependency>
                 <groupId>org.jboss</groupId>
                 <artifactId>jandex</artifactId>
-                <version>2.4.1.Final</version>
+                <version>2.4.2.Final</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.elasticsearch</groupId>
                 <artifactId>elasticsearch</artifactId>
-                <version>7.15.2</version>
+                <version>7.17.0</version>
             </dependency>
             <dependency>
                 <groupId>javax</groupId>
@@ -154,6 +173,12 @@
                 <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
                 <version>3.1.0-M1</version>
                 <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.testng</groupId>
+                <artifactId>arquillian-testng-container</artifactId>
+                <version>1.6.0.Final</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss.arquillian.container</groupId>
@@ -179,6 +204,27 @@
                 <artifactId>junit-jupiter-engine</artifactId>
                 <version>${junit5.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>fish.payara.extras</groupId>
+                <artifactId>payara-embedded-all</artifactId>
+                <version>5.2021.10</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.faces</groupId>
+                <artifactId>jakarta.faces-api</artifactId>
+                <version>3.0.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
