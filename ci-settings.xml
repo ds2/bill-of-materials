@@ -6,6 +6,11 @@
             <username>${env.CI_USERNAME}</username>
             <password>${env.CI_PASSWORD}</password>
         </server>
+        <server>
+            <id>ds2.azure.blobstorage</id>
+            <username>${env.CI_AZURE_STORAGEACC}</username>
+            <password>${env.CI_AZURE_SECKEY}</password>
+        </server>
     </servers>
     <mirrors>
         <!--<mirror><id>central-mirror</id><mirrorOf>central</mirrorOf><url>http://ec2-35-157-174-18.eu-central-1.compute.amazonaws.com/repository/tignum</url></mirror>-->
