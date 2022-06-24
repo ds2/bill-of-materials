@@ -7,12 +7,12 @@
     <description>A BOM for building JEE8 projects with JakartaEE.</description>
     <inceptionYear>2006</inceptionYear>
     <properties>
-        <ds2.deploy.rel>https://ds2.jfrog.io/artifactory/oss-releases/</ds2.deploy.rel>
-        <ds2.deploy.sn>https://ds2.jfrog.io/artifactory/snapshots/</ds2.deploy.sn>
-        <ds2.deploy.repoId>ds2.jfrog</ds2.deploy.repoId>
+        <ds2.deploy.rel>bs://ds2mavenrepos/releases</ds2.deploy.rel>
+        <ds2.deploy.sn>bs://ds2mavenrepos/snapshots</ds2.deploy.sn>
+        <ds2.deploy.repoId>ds2.azure.blobstorage</ds2.deploy.repoId>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.source.version>1.8</java.source.version>
-        <java.target.version>1.8</java.target.version>
+        <java.source.version>1.17</java.source.version>
+        <java.target.version>1.17</java.target.version>
         <logback.version>1.2.11</logback.version>
         <compiler.plugin.fork>false</compiler.plugin.fork>
         <maven.compiler.target>${java.target.version}</maven.compiler.target>
@@ -147,6 +147,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+            <extension>
+              <groupId>com.gkatzioura.maven.cloud</groupId>
+              <artifactId>azure-storage-wagon</artifactId>
+              <version>1.8</version>
+            </extension>
+          </extensions>
     </build>
     <reporting>
         <plugins>
