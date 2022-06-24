@@ -75,6 +75,17 @@
                     </snapshots>
                     <url>https://ds2.jfrog.io/artifactory/ds2/</url>
                 </pluginRepository>
+                <pluginRepository>
+                    <id>ds2.azure.blobstorage.web</id>
+                    <name>DS2 Azure Blob Storage Releases</name>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://ds2mavenrepos.blob.core.windows.net/releases/</url>
+                </pluginRepository>
             </pluginRepositories>
             <repositories>
                 <repository>
@@ -87,6 +98,28 @@
                         <enabled>true</enabled>
                     </snapshots>
                     <url>https://ds2.jfrog.io/artifactory/ds2/</url>
+                </repository>
+                <repository>
+                    <id>ds2.azure.blobstorage.web</id>
+                    <name>DS2 Azure Blob Storage Releases</name>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <url>https://ds2mavenrepos.blob.core.windows.net/releases/</url>
+                </repository>
+                <repository>
+                    <id>ds2.azure.blobstorage.web</id>
+                    <name>DS2 Azure Blob Storage Snapshots</name>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <url>https://ds2mavenrepos.blob.core.windows.net/snapshots/</url>
                 </repository>
             </repositories>
         </profile>
