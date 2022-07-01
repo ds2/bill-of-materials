@@ -16,7 +16,6 @@ deploy:
   script:
     - mvn $MAVEN_CLI_OPTS deploy
   only:
-    - main
     - develop
 
 pages:
