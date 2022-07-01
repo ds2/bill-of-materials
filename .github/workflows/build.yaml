@@ -47,3 +47,5 @@ jobs:
         env:
           CI_USERNAME: ${{secrets.CI_USERNAME}}
           CI_PASSWORD: ${{secrets.CI_PASSWORD}}
+          CI_AZURE_STORAGEACC: ${{secrets.CI_AZURE_STORAGEACC}}
+          CI_AZURE_SECKEY: ${{secrets.CI_AZURE_SECKEY}}
