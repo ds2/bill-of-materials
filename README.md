@@ -49,5 +49,6 @@ You must be on the releases branch. Then run:
     git branch release/v${REL_VERSION} develop
     git switch release/v${REL_VERSION}
     mvn -B release:clean release:prepare -DdevelopmentVersion=1.0.0-SNAPSHOT -DreleaseVersion=${REL_VERSION} -DdryRun=true && mvn -B release:clean release:prepare -DdevelopmentVersion=1.0.0-SNAPSHOT -DreleaseVersion=${REL_VERSION} -DdryRun=false
+    git push origin v${REL_VERSION}
 
 Gitlab will perform the live rollout of the version.
