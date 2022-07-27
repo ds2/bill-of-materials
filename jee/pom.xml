@@ -15,7 +15,7 @@
     </modules>
     <properties>
         <apache.logging.version>2.18.0</apache.logging.version>
-        <junit5.version>5.8.2</junit5.version>
+        <junit5.version>5.9.0</junit5.version>
         <slf4j.version>1.7.36</slf4j.version>
     </properties>
     <dependencyManagement>
