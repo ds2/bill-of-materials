@@ -171,7 +171,7 @@
             <dependency>
                 <groupId>org.eclipse.persistence</groupId>
                 <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
-                <version>4.0.0-M3</version>
+                <version>4.0.0-RC1</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>
