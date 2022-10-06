@@ -1,18 +1,29 @@
 version: 2
+
 updates:
-  - package-ecosystem: "maven"
+  - package-ecosystem: "maven"  # can also be maven, gradle
     directory: "/"
     schedule:
       interval: "daily"
+      time: "09:00"
       timezone: "Europe/Berlin"
     open-pull-requests-limit: 20
+    reviewers: # you can also use assignees
+      - "lexxy23"
+    commit-message:
+      prefix: "⬆️"
   - package-ecosystem: "github-actions" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "sunday"
+      day: "sunday" # only when weekly is set!
+      time: "09:00"
       timezone: "Europe/Berlin"
+    reviewers: # you can also use assignees
+      - "lexxy23"
     labels:
       - "githubactions"
       - "updates"
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "🔨"
