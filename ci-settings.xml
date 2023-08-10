@@ -2,11 +2,6 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>ds2.jfrog</id>
-            <username>${env.CI_USERNAME}</username>
-            <password>${env.CI_PASSWORD}</password>
-        </server>
-        <server>
             <id>ds2.azure.blobstorage</id>
             <username>${env.CI_AZURE_STORAGEACC}</username>
             <password>${env.CI_AZURE_SECKEY}</password>
@@ -64,7 +59,7 @@
         <profile>
             <id>ds2</id>
             <pluginRepositories>
-                <pluginRepository>
+                <!-- <pluginRepository>
                     <id>ds2.jfrog</id>
                     <name>DS2 Artifactory Plugin Repo</name>
                     <releases>
@@ -74,7 +69,7 @@
                         <enabled>false</enabled>
                     </snapshots>
                     <url>https://ds2.jfrog.io/artifactory/ds2/</url>
-                </pluginRepository>
+                </pluginRepository> -->
                 <pluginRepository>
                     <id>ds2.azure.blobstorage.web</id>
                     <name>DS2 Azure Blob Storage Releases</name>
@@ -88,7 +83,7 @@
                 </pluginRepository>
             </pluginRepositories>
             <repositories>
-                <repository>
+                <!-- <repository>
                     <id>ds2.jfrog</id>
                     <name>DS2 Artifactory Plugin Repo</name>
                     <releases>
@@ -98,7 +93,7 @@
                         <enabled>true</enabled>
                     </snapshots>
                     <url>https://ds2.jfrog.io/artifactory/ds2/</url>
-                </repository>
+                </repository> -->
                 <repository>
                     <id>ds2.azure.blobstorage.web</id>
                     <name>DS2 Azure Blob Storage Releases</name>

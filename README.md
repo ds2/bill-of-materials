@@ -52,3 +52,7 @@ You must be on the releases branch. Then run:
     git push origin v${REL_VERSION}
 
 Gitlab will perform the live rollout of the version.
+
+## Developer related
+
+You can directly work with this repo via [your browser](https://vscode.dev/github/ds2/bill-of-materials).
