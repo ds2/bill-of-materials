@@ -10,7 +10,7 @@
     <description>This module contains some basic dependencies for JEE.</description>
     <packaging>pom</packaging>
     <modules>
-        <module>jee</module>
+        <module>jee-full</module>
         <module>jee-web</module>
     </modules>
     <properties>
