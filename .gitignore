@@ -13,3 +13,4 @@ release.properties
 docs
 public
 tmp
+*.versionsBackup
