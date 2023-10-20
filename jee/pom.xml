@@ -14,7 +14,7 @@
         <module>jee-web</module>
     </modules>
     <properties>
-        <apache.logging.version>2.20.0</apache.logging.version>
+        <apache.logging.version>2.21.0</apache.logging.version>
         <junit5.version>5.10.0</junit5.version>
         <slf4j.version>2.0.9</slf4j.version>
     </properties>
@@ -107,13 +107,13 @@
             <dependency>
                 <groupId>com.lmax</groupId>
                 <artifactId>disruptor</artifactId>
-                <version>3.4.4</version>
+                <version>4.0.0</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>32.1.2-jre</version>
+                <version>32.1.3-jre</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.persistence</groupId>
@@ -148,19 +148,19 @@
             <dependency>
                 <groupId>org.jboss.weld.se</groupId>
                 <artifactId>weld-se-core</artifactId>
-                <version>5.1.1.SP2</version>
+                <version>5.1.2.Final</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.jboss</groupId>
                 <artifactId>jandex</artifactId>
-                <version>3.1.3</version>
+                <version>3.1.5</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.elasticsearch</groupId>
                 <artifactId>elasticsearch</artifactId>
-                <version>8.10.2</version>
+                <version>8.10.4</version>
             </dependency>
             <dependency>
                 <groupId>javax</groupId>

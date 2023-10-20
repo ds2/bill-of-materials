@@ -19,7 +19,7 @@
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
         <maven.compiler.verbose>false</maven.compiler.verbose>
         <maven.compiler.debug>true</maven.compiler.debug>
-        <spotbugs.version>4.7.3</spotbugs.version>
+        <spotbugs.version>4.8.0</spotbugs.version>
     </properties>
     <organization>
         <name>DS/2</name>
@@ -62,7 +62,7 @@
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.7.3.5</version>
+                    <version>4.7.3.6</version>
                     <dependencies>
                         <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
                         <dependency>
@@ -113,7 +113,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.5.0</version>
+                    <version>3.5.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
