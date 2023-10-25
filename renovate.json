@@ -11,14 +11,13 @@
     {
       "description": "Automatically merge minor and patch-level updates",
       "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true,
-      "automergeType": "branch"
+      "automerge": true
     }
   ],
   "commitMessagePrefix": "⬆️",
   "addLabels": ["dependencies"],
   "reviewersFromCodeOwners": true,
-  "additionalReviewers": ["lexxy23", "rusty232", "team:owners"],
+  "additionalReviewers": ["lexxy23", "rusty232"],
   "branchConcurrentLimit": 5,
   "prConcurrentLimit": 9
 }
