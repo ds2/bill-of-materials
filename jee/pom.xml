@@ -160,7 +160,7 @@
             <dependency>
                 <groupId>org.elasticsearch</groupId>
                 <artifactId>elasticsearch</artifactId>
-                <version>8.12.1</version>
+                <version>8.12.2</version>
             </dependency>
             <dependency>
                 <groupId>javax</groupId>
