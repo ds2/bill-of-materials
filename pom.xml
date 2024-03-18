@@ -56,7 +56,7 @@
         </site>
     </distributionManagement>
     <modules>
-        <module>jee</module>
+        <module>jee-common</module>
     </modules>
     <build>
         <pluginManagement>
