@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "timezone": "Europe/Berlin",
   "schedule": [
-    "after 10pm every weekday",
+    "after 4pm every weekday",
     "before 5am every weekday",
     "every weekend"
   ],
@@ -11,11 +11,12 @@
     {
       "description": "Automatically merge minor and patch-level updates",
       "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true
+      "automerge": true,
+      "automergeType": "branch"
     }
   ],
-  "commitMessagePrefix": "⬆️",
-  "addLabels": ["dependencies"],
+  "commitMessagePrefix": "build: ⬆️",
+  "addLabels": ["dependencies", "java", "maven"],
   "reviewersFromCodeOwners": true,
   "additionalReviewers": ["lexxy23", "rusty232"],
   "branchConcurrentLimit": 5,

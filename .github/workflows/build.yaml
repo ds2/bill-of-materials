@@ -5,6 +5,15 @@ on:
     branches:
       - develop
 
+env:
+  RUST_BACKTRACE: full
+  CI: "1"
+  CARGO_TERM_COLOR: always
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-cargo
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
