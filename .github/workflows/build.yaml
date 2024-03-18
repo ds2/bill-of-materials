@@ -24,14 +24,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Build with Maven
-        run: mvn -s ci-settings.xml --batch-mode --update-snapshots clean site:site site:stage-deploy -DstagingSiteURL=file://$(pwd)/tmp -DtopSiteURL=https://www.ds-2.de/
+        run: mvn -s ci-settings.xml --batch-mode --update-snapshots clean site:site site:stage-deploy -DstagingSiteURL=file://$(pwd)/tmp -DtopSiteURL=https://www.ds2.dev/
         env:
           CI_USERNAME: ${{secrets.CI_USERNAME}}
           CI_PASSWORD: ${{secrets.CI_PASSWORD}}
       - name: copy to docs dir
         run: |
           mkdir -p docs || true
-          cp -r tmp/file:/tmp/ds2-jee-bom-1.0.0-SNAPSHOT/* docs/
+          cp -r target/site/* docs/
           find docs -maxdepth 2
       - name: Deploy to GitHub Pages
         if: success()
@@ -48,3 +48,8 @@ jobs:
           CI_PASSWORD: ${{secrets.CI_PASSWORD}}
           CI_AZURE_STORAGEACC: ${{secrets.CI_AZURE_STORAGEACC}}
           CI_AZURE_SECKEY: ${{secrets.CI_AZURE_SECKEY}}
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ds2_bill-of-materials
