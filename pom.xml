@@ -19,7 +19,7 @@
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
         <maven.compiler.verbose>false</maven.compiler.verbose>
         <maven.compiler.debug>true</maven.compiler.debug>
-        <spotbugs.version>4.8.3</spotbugs.version>
+        <spotbugs.version>4.8.4</spotbugs.version>
         <sonar.organization>ds2-1</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
