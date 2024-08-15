@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.source.version>1.17</java.source.version>
         <java.target.version>1.17</java.target.version>
-        <logback.version>1.5.6</logback.version>
+        <logback.version>1.5.7</logback.version>
         <compiler.plugin.fork>false</compiler.plugin.fork>
         <maven.compiler.target>${java.target.version}</maven.compiler.target>
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
