@@ -2,7 +2,7 @@ image: maven:latest
 
 include:
   - project: 'ds_2/ci-templates'
-    ref: v0.2.0
+    ref: v0.3.2
     file: # you can add multiple files you need for your project
       - '/templates/stages.yaml'
       - '/templates/build-maven.yaml'
